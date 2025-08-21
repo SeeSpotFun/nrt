@@ -121,6 +121,90 @@ function displayDosingResults(recommendation, cigarettes) {
     }, 100);
 }
 
+// Enhanced table scroll detection for fade indicators
+function setupTableScrollIndicators() {
+    const tableWrappers = document.querySelectorAll('.table-wrapper');
+    
+    tableWrappers.forEach(wrapper => {
+        const table = wrapper.querySelector('table');
+        const fadeRight = wrapper.querySelector('.table-fade-right');
+        
+        if (!table || !fadeRight) return;
+        
+        // Function to check scroll position and update fade indicator
+        function updateScrollIndicator() {
+            const scrollLeft = wrapper.scrollLeft;
+            const scrollWidth = wrapper.scrollWidth;
+            const clientWidth = wrapper.clientWidth;
+            const isScrolledToEnd = scrollLeft + clientWidth >= scrollWidth - 5; // 5px tolerance
+            
+            if (isScrolledToEnd) {
+                wrapper.classList.add('scrolled-to-end');
+            } else {
+                wrapper.classList.remove('scrolled-to-end');
+            }
+        }
+        
+        // Initial check
+        updateScrollIndicator();
+        
+        // Add scroll listener
+        wrapper.addEventListener('scroll', updateScrollIndicator);
+        
+        // Add resize listener to handle viewport changes
+        window.addEventListener('resize', updateScrollIndicator);
+        
+        // Add touch events for better mobile experience
+        let startX = 0;
+        let scrollLeftStart = 0;
+        
+        wrapper.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].pageX;
+            scrollLeftStart = wrapper.scrollLeft;
+        });
+        
+        wrapper.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+            const x = e.touches[0].pageX;
+            const walk = (x - startX) * 1.5; // Adjust scroll sensitivity
+            wrapper.scrollLeft = scrollLeftStart - walk;
+        });
+        
+        console.log('Table scroll indicators setup for table wrapper');
+    });
+}
+
+// Enhanced mobile table experience
+function enhanceMobileTableExperience() {
+    const isMobile = window.innerWidth <= 768;
+    const isTablet = window.innerWidth > 768 && window.innerWidth <= 1024;
+    
+    if (isMobile || isTablet) {
+        // Add visual cues for scrollable tables
+        const tables = document.querySelectorAll('.dosing-table, .heavy-smoker-table');
+        
+        tables.forEach(table => {
+            const wrapper = table.closest('.table-wrapper');
+            if (wrapper) {
+                // Add a subtle pulsing effect to indicate scrollability
+                wrapper.style.position = 'relative';
+                
+                // Create scroll hint on first load
+                setTimeout(() => {
+                    if (wrapper.scrollWidth > wrapper.clientWidth) {
+                        wrapper.scrollTo({ left: 50, behavior: 'smooth' });
+                        setTimeout(() => {
+                            wrapper.scrollTo({ left: 0, behavior: 'smooth' });
+                        }, 1500);
+                    }
+                }, 1000);
+            }
+        });
+        
+        console.log('Mobile table experience enhanced');
+    }
+}
+
 // Initialize the page
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Page loaded, initializing...');
@@ -128,6 +212,8 @@ document.addEventListener('DOMContentLoaded', function() {
     populateHeavySmokerTable();
     setupSmoothScrolling();
     setupCalculatorInputHandler();
+    setupTableScrollIndicators();
+    enhanceMobileTableExperience();
     
     // Make calculateDosing available globally
     window.calculateDosing = calculateDosing;
@@ -147,7 +233,7 @@ function populateDosingTable() {
     dosingData.forEach(item => {
         const row = document.createElement('tr');
         row.innerHTML = `
-            <td>${item.cigarettes}</td>
+            <td class="sticky-column">${item.cigarettes}</td>
             <td>${item.nicotine_need} mg</td>
             <td>${item.patches}</td>
             <td>${item.short_acting}</td>
@@ -173,7 +259,7 @@ function populateHeavySmokerTable() {
         const supervisionClass = getSupervisionClass(item.supervision);
         
         row.innerHTML = `
-            <td><strong>${item.level}</strong></td>
+            <td class="sticky-column"><strong>${item.level}</strong></td>
             <td>${item.nicotine_need} mg</td>
             <td>${item.patches}</td>
             <td>${item.total_nicotine} mg</td>
@@ -305,6 +391,15 @@ function updateActiveNavLink() {
 // Add scroll listener for active nav highlighting
 window.addEventListener('scroll', updateActiveNavLink);
 
+// Handle window resize for responsive table behavior
+window.addEventListener('resize', function() {
+    // Re-setup table scroll indicators on resize
+    setTimeout(setupTableScrollIndicators, 100);
+    
+    // Re-enhance mobile experience if needed
+    setTimeout(enhanceMobileTableExperience, 200);
+});
+
 // Additional utility functions for enhanced functionality
 function formatNicotineAmount(amount) {
     if (typeof amount === 'string' && amount.includes('-')) {
@@ -327,6 +422,9 @@ function printSection(sectionId) {
                         body { padding: 20px; }
                         @media print {
                             .calculator-input { display: none; }
+                            .mobile-scroll-instruction { display: none; }
+                            .mobile-scroll-note { display: none; }
+                            .table-fade-right { display: none; }
                         }
                     </style>
                 </head>
@@ -356,6 +454,46 @@ function validateDosing(cigarettes, patches, shortActing) {
     return warnings;
 }
 
+// Enhanced keyboard navigation for tables
+function enhanceTableAccessibility() {
+    const tables = document.querySelectorAll('.dosing-table, .heavy-smoker-table');
+    
+    tables.forEach(table => {
+        table.setAttribute('tabindex', '0');
+        table.setAttribute('role', 'table');
+        table.setAttribute('aria-label', 'NRT dosing information - use arrow keys to navigate');
+        
+        table.addEventListener('keydown', function(e) {
+            const wrapper = table.closest('.table-wrapper');
+            if (!wrapper) return;
+            
+            switch(e.key) {
+                case 'ArrowLeft':
+                    e.preventDefault();
+                    wrapper.scrollLeft -= 50;
+                    break;
+                case 'ArrowRight':
+                    e.preventDefault();
+                    wrapper.scrollLeft += 50;
+                    break;
+                case 'Home':
+                    e.preventDefault();
+                    wrapper.scrollLeft = 0;
+                    break;
+                case 'End':
+                    e.preventDefault();
+                    wrapper.scrollLeft = wrapper.scrollWidth;
+                    break;
+            }
+        });
+    });
+}
+
+// Initialize accessibility features
+document.addEventListener('DOMContentLoaded', function() {
+    enhanceTableAccessibility();
+});
+
 // Export functions for potential module use
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
@@ -363,6 +501,8 @@ if (typeof module !== 'undefined' && module.exports) {
         populateDosingTable,
         populateHeavySmokerTable,
         dosingData,
-        heavySmokerData
+        heavySmokerData,
+        setupTableScrollIndicators,
+        enhanceMobileTableExperience
     };
 }

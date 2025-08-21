@@ -182,19 +182,36 @@
                 <!-- Comprehensive Dosing Table -->
                 <div class="dosing-table-container">
                     <h3>Comprehensive NRT Dosing Guide</h3>
-                    <table class="dosing-table">
-                        <thead>
-                            <tr>
-                                <th>Cigarettes/Day</th>
-                                <th>Nicotine Need (mg)</th>
-                                <th>Patch Dosing</th>
-                                <th>Short-Acting NRT</th>
-                            </tr>
-                        </thead>
-                        <tbody id="dosing-table-body">
-                            <!-- Table data will be populated by JavaScript -->
-                        </tbody>
-                    </table>
+                    
+                    <!-- Mobile scroll instruction -->
+                    <div class="mobile-scroll-instruction">
+                        <p class="mobile-instruction-text">📱 On mobile devices: Swipe table left/right to see all columns</p>
+                        <div class="scroll-hint-arrows">
+                            <span class="scroll-arrow scroll-arrow--left">←</span>
+                            <span class="scroll-text">Scroll horizontally</span>
+                            <span class="scroll-arrow scroll-arrow--right">→</span>
+                        </div>
+                    </div>
+                    
+                    <div class="table-wrapper">
+                        <table class="dosing-table">
+                            <thead>
+                                <tr>
+                                    <th class="sticky-column">Cigarettes/Day</th>
+                                    <th>Nicotine Need (mg)</th>
+                                    <th>Patch Dosing</th>
+                                    <th>Short-Acting NRT</th>
+                                </tr>
+                            </thead>
+                            <tbody id="dosing-table-body">
+                                <!-- Table data will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                        <div class="table-fade-right"></div>
+                    </div>
+                    
+                    <!-- Mobile scroll note -->
+                    <p class="mobile-scroll-note">Complete dosing information available by scrolling horizontally</p>
                 </div>
             </div>
         </section>
@@ -206,23 +223,41 @@
                 <div class="heavy-smoker-intro">
                     <p>Patients smoking 3+ packs per day (60+ cigarettes) require specialized high-dose NRT protocols with enhanced monitoring.</p>
                 </div>
+                
                 <div class="heavy-smoker-table-container">
-                    <table class="heavy-smoker-table">
-                        <thead>
-                            <tr>
-                                <th>Smoking Level</th>
-                                <th>Nicotine Need (mg)</th>
-                                <th>Patch Protocol</th>
-                                <th>Total Patch Nicotine</th>
-                                <th>Short-Acting Support</th>
-                                <th>Medical Supervision</th>
-                            </tr>
-                        </thead>
-                        <tbody id="heavy-smoker-table-body">
-                            <!-- Table data will be populated by JavaScript -->
-                        </tbody>
-                    </table>
+                    <!-- Mobile scroll instruction -->
+                    <div class="mobile-scroll-instruction">
+                        <p class="mobile-instruction-text">📱 On mobile devices: Swipe table left/right to see all columns</p>
+                        <div class="scroll-hint-arrows">
+                            <span class="scroll-arrow scroll-arrow--left">←</span>
+                            <span class="scroll-text">Scroll horizontally</span>
+                            <span class="scroll-arrow scroll-arrow--right">→</span>
+                        </div>
+                    </div>
+                    
+                    <div class="table-wrapper">
+                        <table class="heavy-smoker-table">
+                            <thead>
+                                <tr>
+                                    <th class="sticky-column">Smoking Level</th>
+                                    <th>Nicotine Need (mg)</th>
+                                    <th>Patch Protocol</th>
+                                    <th>Total Patch Nicotine</th>
+                                    <th>Short-Acting Support</th>
+                                    <th>Medical Supervision</th>
+                                </tr>
+                            </thead>
+                            <tbody id="heavy-smoker-table-body">
+                                <!-- Table data will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                        <div class="table-fade-right"></div>
+                    </div>
+                    
+                    <!-- Mobile scroll note -->
+                    <p class="mobile-scroll-note">Complete dosing information available by scrolling horizontally</p>
                 </div>
+                
                 <div class="heavy-smoker-considerations">
                     <h3>Important Considerations</h3>
                     <ul class="considerations-list">

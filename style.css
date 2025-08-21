@@ -973,21 +973,95 @@ select.form-control {
   margin-top: var(--space-16);
 }
 
-/* Tables - Fixed width and overflow issues */
+/* MOBILE SCROLL IMPROVEMENTS */
+.mobile-scroll-instruction {
+  text-align: center;
+  margin-bottom: var(--space-16);
+  padding: var(--space-12);
+  background: var(--color-bg-4);
+  border-radius: var(--radius-base);
+  border: 1px solid var(--color-warning);
+}
+
+.mobile-instruction-text {
+  margin: 0 0 var(--space-8) 0;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+}
+
+.scroll-hint-arrows {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.scroll-arrow {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  animation: pulse 2s infinite;
+}
+
+.scroll-text {
+  font-style: italic;
+}
+
+.mobile-scroll-note {
+  text-align: center;
+  margin-top: var(--space-12);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+/* Pulse animation for scroll arrows */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Table Wrapper with Fade Effect */
+.table-wrapper {
+  position: relative;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* iOS momentum scrolling */
+  scroll-behavior: smooth;
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.table-fade-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 100%;
+  background: linear-gradient(to right, transparent, var(--color-surface));
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--duration-normal) var(--ease-standard);
+}
+
+/* Show fade indicator when content overflows */
+.table-wrapper:not(.scrolled-to-end) .table-fade-right {
+  opacity: 1;
+}
+
+/* Tables - Improved with sticky columns and better mobile support */
 .dosing-table-container,
 .heavy-smoker-table-container {
   margin-top: var(--space-32);
-  overflow-x: auto;
-  background: var(--color-surface);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
 }
 
 .dosing-table-container h3 {
   text-align: center;
   margin-bottom: var(--space-24);
   color: var(--color-text);
-  padding: var(--space-16) var(--space-16) 0;
 }
 
 .dosing-table,
@@ -998,6 +1072,16 @@ select.form-control {
   background: var(--color-surface);
   border-radius: var(--radius-lg);
   overflow: hidden;
+}
+
+/* Sticky first column */
+.sticky-column {
+  position: sticky;
+  left: 0;
+  background: var(--color-surface);
+  z-index: 2;
+  border-right: 2px solid var(--color-border);
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
 }
 
 .dosing-table th,
@@ -1017,17 +1101,20 @@ select.form-control {
 .dosing-table td:nth-child(1) {
   width: 15%;
   white-space: nowrap;
+  min-width: 120px;
 }
 
 .dosing-table th:nth-child(2),
 .dosing-table td:nth-child(2) {
   width: 15%;
   white-space: nowrap;
+  min-width: 140px;
 }
 
 .dosing-table th:nth-child(3),
 .dosing-table td:nth-child(3) {
   width: 25%;
+  min-width: 180px;
 }
 
 .dosing-table th:nth-child(4),
@@ -1035,28 +1122,33 @@ select.form-control {
   width: 45%;
   word-wrap: break-word;
   hyphens: auto;
+  min-width: 300px;
 }
 
 .heavy-smoker-table th:nth-child(1),
 .heavy-smoker-table td:nth-child(1) {
   width: 20%;
+  min-width: 160px;
 }
 
 .heavy-smoker-table th:nth-child(2),
 .heavy-smoker-table td:nth-child(2) {
   width: 12%;
   white-space: nowrap;
+  min-width: 120px;
 }
 
 .heavy-smoker-table th:nth-child(3),
 .heavy-smoker-table td:nth-child(3) {
   width: 18%;
+  min-width: 150px;
 }
 
 .heavy-smoker-table th:nth-child(4),
 .heavy-smoker-table td:nth-child(4) {
   width: 12%;
   white-space: nowrap;
+  min-width: 120px;
 }
 
 .heavy-smoker-table th:nth-child(5),
@@ -1064,11 +1156,13 @@ select.form-control {
   width: 25%;
   word-wrap: break-word;
   hyphens: auto;
+  min-width: 200px;
 }
 
 .heavy-smoker-table th:nth-child(6),
 .heavy-smoker-table td:nth-child(6) {
   width: 13%;
+  min-width: 120px;
 }
 
 .dosing-table th,
@@ -1080,6 +1174,12 @@ select.form-control {
   position: sticky;
   top: 0;
   z-index: 1;
+}
+
+/* Ensure sticky column headers stay above sticky columns */
+.dosing-table th.sticky-column,
+.heavy-smoker-table th.sticky-column {
+  z-index: 3;
 }
 
 .dosing-table tbody tr:hover,
@@ -1220,6 +1320,7 @@ html {
     grid-template-columns: 1fr;
   }
   
+  /* Mobile table improvements */
   .dosing-table-container,
   .heavy-smoker-table-container {
     font-size: var(--font-size-sm);
@@ -1230,13 +1331,21 @@ html {
   .heavy-smoker-table th,
   .heavy-smoker-table td {
     padding: var(--space-8) var(--space-10);
-    max-width: none; /* Remove max-width on mobile for better text flow */
   }
   
-  /* Adjust table columns for mobile */
+  /* Reduce minimum width on mobile for better scrolling */
   .dosing-table,
   .heavy-smoker-table {
-    min-width: 600px; /* Reduce minimum width on mobile */
+    min-width: 700px;
+  }
+
+  /* Show mobile instructions only on mobile */
+  .mobile-scroll-instruction {
+    display: block;
+  }
+  
+  .mobile-scroll-note {
+    display: block;
   }
 
   /* Research section responsive */
@@ -1259,6 +1368,44 @@ html {
   .source-item {
     padding: var(--space-10);
   }
+
+  /* Enhanced mobile table scrolling */
+  .table-wrapper {
+    border-radius: var(--radius-base);
+    box-shadow: var(--shadow-md);
+  }
+  
+  /* More prominent fade on mobile */
+  .table-fade-right {
+    width: 40px;
+    background: linear-gradient(to right, transparent 0%, var(--color-surface) 60%, var(--color-surface) 100%);
+  }
+}
+
+/* Desktop - Hide mobile instructions */
+@media (min-width: 769px) {
+  .mobile-scroll-instruction {
+    display: none;
+  }
+  
+  .mobile-scroll-note {
+    display: none;
+  }
+}
+
+/* Enhanced table scrolling indicators for tablets */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .mobile-scroll-instruction {
+    display: block;
+  }
+  
+  .mobile-scroll-note {
+    display: block;
+  }
+  
+  .table-wrapper {
+    box-shadow: var(--shadow-lg);
+  }
 }
 
 /* Focus states for accessibility */
@@ -1269,12 +1416,20 @@ html {
   outline-offset: 2px;
 }
 
+.table-wrapper:focus-within {
+  outline: var(--focus-outline);
+  outline-offset: 2px;
+}
+
 /* Print styles */
 @media print {
   .header,
   .nav,
   .calculator-input,
-  .footer {
+  .footer,
+  .mobile-scroll-instruction,
+  .mobile-scroll-note,
+  .table-fade-right {
     display: none;
   }
   
@@ -1297,5 +1452,11 @@ html {
   .research-subsection {
     break-inside: avoid;
     margin-bottom: var(--space-16);
+  }
+  
+  .sticky-column {
+    position: static;
+    box-shadow: none;
+    border-right: 1px solid var(--color-border);
   }
 }
