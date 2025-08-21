@@ -1,506 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinical Guide to Nicotine Replacement Therapy</title>
+    <link rel="stylesheet" href="style.css">
     <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-850MGBQ7E7"
-    ></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-850MGBQ7E7"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-850MGBQ7E7");
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-850MGBQ7E7');
     </script>
-
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Clinical Guide to Nicotine Replacement Therapy</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-
-  <body>
+</head>
+<body>
     <!-- Header -->
     <header class="header">
-      <div class="container">
-        <div class="header__content">
-          <h1 class="header__title">
-            Clinical Guide to Nicotine Replacement Therapy
-          </h1>
-          <p class="header__subtitle">
-            Evidence-Based Dosing for Heavy Smokers (2000-2025)
-          </p>
-          <nav class="nav">
-            <a href="#overview" class="nav__link">Overview</a>
-            <a href="#research" class="nav__link">Research</a>
-            <a href="#calculator" class="nav__link">Dosing Calculator</a>
-            <a href="#heavy-smokers" class="nav__link">Heavy Smokers</a>
-            <a href="#safety" class="nav__link">Safety</a>
-          </nav>
+        <div class="container">
+            <div class="header__content">
+                <h1 class="header__title">Clinical Guide to Nicotine Replacement Therapy</h1>
+                <p class="header__subtitle">Evidence-Based Dosing for Heavy Smokers (2000-2025)</p>
+                <nav class="nav">
+                    <a href="#overview" class="nav__link">Overview</a>
+                    <a href="#research" class="nav__link">Research</a>
+                    <a href="#calculator" class="nav__link">Dosing Calculator</a>
+                    <a href="#heavy-smokers" class="nav__link">Heavy Smokers</a>
+                    <a href="#safety" class="nav__link">Safety</a>
+                </nav>
+            </div>
         </div>
-      </div>
     </header>
 
     <!-- Main Content -->
     <main class="main">
-      <!-- Overview Section -->
-      <section id="overview" class="section">
-        <div class="container">
-          <h2 class="section__title">Overview of NRT Effectiveness</h2>
-          <div class="overview-grid">
-            <div class="card">
-              <div class="card__body">
-                <h3>NRT Success Rate</h3>
-                <div class="stat">50-70%</div>
-                <p>NRT increases quit rates by 50-70% compared to placebo</p>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card__body">
-                <h3>Combination Therapy</h3>
-                <div class="stat">+25%</div>
-                <p>Patch + gum/lozenge is 25% more effective than single NRT</p>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card__body">
-                <h3>Modern Approach</h3>
-                <div class="stat">Higher Doses</div>
-                <p>
-                  Current guidelines emphasize higher doses for heavy smokers
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="overview-content">
-            <p>
-              Nicotine Replacement Therapy (NRT) remains the gold standard for
-              smoking cessation, particularly for heavy smokers. Modern
-              approaches emphasize combination therapy using long-acting patches
-              with short-acting gum or lozenges to address both baseline
-              nicotine dependence and breakthrough cravings.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Research Evidence Section - COMPLETELY REPLACED -->
-      <section id="research" class="section section--bg">
-        <div class="container">
-          <h2 class="section__title">Research Evidence</h2>
-
-          <!-- Smoking While on the Patch Section -->
-          <div class="research-subsection">
-            <h3 class="research-subheading">Cardiovascular Safety of NRT</h3>
-            <div class="research-content">
-              <p class="research-summary">
-                Major concerns about smoking while using NRT patches have been
-                thoroughly studied and found to be largely unfounded.
-              </p>
-              <div class="research-finding">
-                <strong>Key Finding:</strong> A population-based, case-control
-                study of 3,643 patients showed no association between nicotine
-                patch use and first myocardial infarction, with crude event
-                rates of 0.3-3% in nicotine group vs 0-2% in placebo group.
-              </div>
-              <div class="source-info">
-                <div class="source-item">
-                  <strong>Source Information:</strong> Find detailed
-                  cardiovascular safety data in
-                  <a
-                    href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3549329/"
-                    target="_blank"
-                    >PMC Article PMC3549329 - meta-analysis of 34 randomized
-                    controlled trials</a
-                  >
+        <!-- Overview Section -->
+        <section id="overview" class="section">
+            <div class="container">
+                <h2 class="section__title">Overview of NRT Effectiveness</h2>
+                <div class="overview-grid">
+                    <div class="card">
+                        <div class="card__body">
+                            <h3>NRT Success Rate</h3>
+                            <div class="stat">50-70%</div>
+                            <p>NRT increases quit rates by 50-70% compared to placebo.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card__body">
+                            <h3>Combination Therapy</h3>
+                            <div class="stat">+25%</div>
+                            <p>Patch + gum/lozenge is 25% more effective than single NRT.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="source-item">
-                  <strong>CAMH Reference:</strong>
-                  <a
-                    href="https://www.camh.ca/en/professionals/treating-conditions-and-disorders/smoking-cessation/smoking-cessation---treatment/smoking-cessation---overview-of-nicotine-replacement-therapy"
-                    target="_blank"
-                    >Smoking While on the Patch guidelines available at CAMH NRT
-                    Overview section</a
-                  >
+                <p class="overview-modern">Modern guidelines recommend higher doses and combination therapy for heavy smokers.</p>
+            </div>
+        </section>
+
+        <!-- Research Section -->
+        <section id="research" class="section">
+            <div class="container">
+                <h2 class="section__title">Research</h2>
+
+                <!-- 1. Smoking While on the Patch -->
+                <div class="research-section">
+                    <h3>Smoking While on the Patch: Cardiovascular Safety of NRT</h3>
+                    <p>
+                        Concerns about cardiovascular risk with NRT patches have been addressed in high-quality research: a population-based, case-control study of 3,643 high-risk patients showed NO association between nicotine patch use and first myocardial infarction (heart attack).
+                        <br>
+                        Meta-analyses of 34 randomized controlled trials showed no increase in risk of MI, stroke, or arrhythmia with NRT compared to placebo.<br>
+                        Crude event rates: 0.3–3% (nicotine) vs 0–2% (placebo).
+                    </p>
+                    <p>
+                        <b>Find evidence at:</b>
+                        <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3549329/" target="_blank">PMC3549329 (meta-analysis details)</a> |
+                        <a href="https://www.camh.ca/en/professionals/treating-conditions-and-disorders/smoking-cessation/smoking-cessation---treatment/smoking-cessation---overview-of-nicotine-replacement-therapy" target="_blank">CAMH: Smoking While on the Patch</a>
+                    </p>
                 </div>
-              </div>
-            </div>
-          </div>
 
-          <!-- Evidence for Multiple Patch and Forms of NRT Section -->
-          <div class="research-subsection">
-            <h3 class="research-subheading">
-              Combination and High-Dose NRT Evidence
-            </h3>
-            <div class="research-content">
-              <p class="research-summary">
-                Research strongly supports using multiple patches and
-                combination NRT forms for very dependent smokers.
-              </p>
-              <div class="research-finding">
-                <strong>Key Finding:</strong> Two patches (21mg or 25mg each)
-                deliver similar nicotine concentrations to smoking 40-60
-                cigarettes per day while avoiding toxic combustion products.
-              </div>
-              <div class="source-info">
-                <div class="source-item">
-                  <strong>UK Evidence:</strong> Very dependent smokers benefit
-                  from higher doses - see
-                  <a
-                    href="https://www.ncsct.co.uk/library/view/pdf/Combination%20NRT%202021.pdf"
-                    target="_blank"
-                    >UK NCSCT Combination NRT 2021 PDF, page 5, section 'What
-                    options are available for very dependent smokers'</a
-                  >
+                <!-- 2. Multiple Patch and Forms of NRT -->
+                <div class="research-section">
+                    <h3>Evidence for Multiple Patch and Forms of NRT</h3>
+                    <p>
+                        Research and clinical guidelines strongly support using two or more patches, and combination NRT forms (patch plus gum/lozenges), for very heavy smokers. <br>
+                        Two 21mg patches deliver nicotine blood levels similar to smoking 40-60 cigarettes per day.
+                    </p>
+                    <ul>
+                        <li>
+                            <b>UK NCSCT:</b> See <a href="https://www.ncsct.co.uk/library/view/pdf/Combination%20NRT%202021.pdf" target="_blank">page 5, “Options for very dependent smokers”</a>
+                        </li>
+                        <li>
+                            <b>Winnipeg Health:</b> "<i>The dose of nicotine replacement should be based on typical cigarettes per day and titrated to effect.</i>"<br>
+                            <a href="https://professionals.wrha.mb.ca/old/professionals/tobacco/files/CPG-MgmtTobaccoUse.pdf" target="_blank">Medication Recommendations, p. 9</a>
+                        </li>
+                        <li>
+                            <b>Cochrane Library review:</b> <a href="https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD000146.pub5/full" target="_blank">Authors’ conclusions</a>
+                        </li>
+                    </ul>
                 </div>
-                <div class="source-item">
-                  <strong>Clinical Guidelines:</strong>
-                  <a
-                    href="https://professionals.wrha.mb.ca/old/professionals/tobacco/files/CPG-MgmtTobaccoUse.pdf"
-                    target="_blank"
-                    >Winnipeg Regional Health Authority CPG page 9</a
-                  >
-                  states: 'dose of nicotine replacement should be made on the
-                  basis of usual number of cigarettes smoked and titrated to
-                  effect'
+
+                <!-- 3. Dosing -->
+                <div class="research-section">
+                    <h3>Dosing: Maximum Dose and Clinical Protocols</h3>
+                    <p>
+                        Clinical guidelines support using up to <b>4 x 21mg patches (84mg) per day</b> for very heavy smokers.<br>
+                        <b>CAMH:</b> <a href="https://www.camh.ca/en/professionals/treating-conditions-and-disorders/smoking-cessation/smoking-cessation---treatment/smoking-cessation---overview-of-nicotine-replacement-therapy" target="_blank">Maximal Dose of Nicotine Patch section</a><br>
+                        <b>Algorithm:</b> <a href="https://intrepidlab.ca/en/teach/Documents/Pharmacotherapy%20Algorithm%20JAN2018%20updated.pdf" target="_blank">Pharmacotherapy Algorithm, p. 1 (“Maximum is 84mg”)</a><br>
+                        <b>Dosing charts:</b>
+                        <a href="https://www.ccsme.org/wp-content/uploads/2017/01/Tobacco-Treatment-Medication-Dosing-Chart.pdf" target="_blank">CCSME Dosing Chart</a>,
+                        <a href="https://ctimaine.org/wp-content/uploads/2019/11/Medication-Dosing-Guidelines.pdf" target="_blank">Maine CTI Guide, p. 1</a>
+                    </p>
                 </div>
-                <div class="source-item">
-                  <strong>Cochrane Evidence:</strong>
-                  <a
-                    href="https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD000146.pub5/full"
-                    target="_blank"
-                    >Authors' conclusions support combination NRT - see Cochrane
-                    Library systematic review</a
-                  >
+
+                <!-- 4. Treatment Duration -->
+                <div class="research-section">
+                    <h3>Treatment Duration of NRT: Long-term Safety and Efficacy</h3>
+                    <p>
+                        Extended use (24+ weeks) of NRT is safe and more effective than 8–12 week therapy, though benefits level off with even longer use.<br>
+                        24-week treatment: 27% quit rate (vs 22% at 8 weeks), with excellent safety.
+                        <br>
+                        <b>Source:</b>
+                        <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4410859/" target="_blank">PMC4410859 conclusion</a>
+                    </p>
                 </div>
-              </div>
             </div>
-          </div>
+        </section>
 
-          <!-- Dosing Section -->
-          <div class="research-subsection">
-            <h3 class="research-subheading">
-              Maximum Dose and Clinical Protocols
-            </h3>
-            <div class="research-content">
-              <p class="research-summary">
-                Clinical guidelines support doses up to 84mg daily (4 x 21mg
-                patches) for very heavy smokers.
-              </p>
-              <div class="research-finding">
-                <strong>CAMH Maximal Dose:</strong> CAMH NRT Overview recommends
-                use of up to 4 x 21mg patches simultaneously.
-              </div>
-              <div class="source-info">
-                <div class="source-item">
-                  <strong>CAMH Guidelines:</strong>
-                  <a
-                    href="https://www.camh.ca/en/professionals/treating-conditions-and-disorders/smoking-cessation/smoking-cessation---treatment/smoking-cessation---overview-of-nicotine-replacement-therapy"
-                    target="_blank"
-                    >See Maximal Dose of Nicotine Patch section at CAMH NRT
-                    Overview</a
-                  >
-                </div>
-                <div class="source-item">
-                  <strong>Algorithm Reference:</strong>
-                  <a
-                    href="https://intrepidlab.ca/en/teach/Documents/Pharmacotherapy%20Algorithm%20JAN2018%20updated.pdf"
-                    target="_blank"
-                    >Intrepid Lab Algorithm page 1</a
-                  >
-                  specifies: 'Maximum is 84mg (4 x 21mg)' for tailoring
-                  pharmacotherapy
-                </div>
-                <div class="source-item">
-                  <strong>Dosing Charts:</strong> Complete medication dosing
-                  guidelines available in
-                  <a
-                    href="https://www.ccsme.org/wp-content/uploads/2017/01/Tobacco-Treatment-Medication-Dosing-Chart.pdf"
-                    target="_blank"
-                    >CCSME Tobacco Treatment Medication Dosing Chart</a
-                  >
-                  and
-                  <a
-                    href="https://ctimaine.org/wp-content/uploads/2019/11/Medication-Dosing-Guidelines.pdf"
-                    target="_blank"
-                    >Maine CTI Medication Dosing Guidelines page 1</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
+        <!-- (Other sections like Dosing Calculator, Heavy Smokers, Safety, etc. go here) -->
 
-          <!-- Treatment Duration of NRT Section -->
-          <div class="research-subsection">
-            <h3 class="research-subheading">
-              Long-term NRT Safety and Efficacy
-            </h3>
-            <div class="research-content">
-              <p class="research-summary">
-                Extended NRT use (24+ weeks) is both safe and beneficial, though
-                maintenance beyond 24 weeks shows diminishing returns.
-              </p>
-              <div class="research-finding">
-                <strong>Key Finding:</strong> 24-week treatment significantly
-                more effective than 8-week (27% vs 22% abstinence rates) with
-                excellent safety profile.
-              </div>
-              <div class="source-info">
-                <div class="source-item">
-                  <strong>Long-term Safety:</strong>
-                  <a
-                    href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4410859/"
-                    target="_blank"
-                    >PMC4410859 Conclusion</a
-                  >
-                  states: 'long-term use of nicotine patches (even to 52 weeks)
-                  is safe' though 'maintenance approach provides no additional
-                  therapeutic benefit compared with 24 weeks of treatment'
-                </div>
-                <div class="source-item">
-                  <strong>Duration Recommendation:</strong> Standard treatment
-                  8-12 weeks, heavy smokers up to 24-52 weeks with medical
-                  oversight
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Dosing Calculator Section -->
-      <section id="calculator" class="section">
-        <div class="container">
-          <h2 class="section__title">NRT Dosing Calculator</h2>
-          <div class="calculator-container">
-            <div class="calculator-input">
-              <label for="cigarettes" class="form-label"
-                >Cigarettes per day:</label
-              >
-              <input
-                type="number"
-                id="cigarettes"
-                class="form-control"
-                min="0"
-                max="100"
-                step="10"
-                placeholder="Enter number of cigarettes"
-              />
-              <button class="btn btn--primary" onclick="calculateDosing()">
-                Calculate Dosing
-              </button>
-            </div>
-            <div id="dosing-result" class="dosing-result hidden">
-              <div class="result-grid">
-                <div class="result-item">
-                  <h4>Daily Nicotine Need</h4>
-                  <div class="result-value" id="nicotine-need">-</div>
-                </div>
-                <div class="result-item">
-                  <h4>Patch Recommendation</h4>
-                  <div class="result-value" id="patch-rec">-</div>
-                </div>
-                <div class="result-item">
-                  <h4>Short-Acting NRT</h4>
-                  <div class="result-value" id="short-acting">-</div>
-                </div>
-              </div>
-              <div
-                class="medical-supervision"
-                id="supervision-notice"
-                style="display: none"
-              >
-                <div class="status status--warning">
-                  Medical supervision recommended for high-dose NRT
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Comprehensive Dosing Table -->
-          <div class="dosing-table-container">
-            <h3>Comprehensive NRT Dosing Guide</h3>
-
-            <!-- Mobile scroll instruction -->
-            <div class="mobile-scroll-instruction">
-              <p class="mobile-instruction-text">
-                📱 On mobile devices: Swipe table left/right to see all columns
-              </p>
-              <div class="scroll-hint-arrows">
-                <span class="scroll-arrow scroll-arrow--left">←</span>
-                <span class="scroll-text">Scroll horizontally</span>
-                <span class="scroll-arrow scroll-arrow--right">→</span>
-              </div>
-            </div>
-
-            <div class="table-wrapper">
-              <table class="dosing-table">
-                <thead>
-                  <tr>
-                    <th class="sticky-column">Cigarettes/Day</th>
-                    <th>Nicotine Need (mg)</th>
-                    <th>Patch Dosing</th>
-                    <th>Short-Acting NRT</th>
-                  </tr>
-                </thead>
-                <tbody id="dosing-table-body">
-                  <!-- Table data will be populated by JavaScript -->
-                </tbody>
-              </table>
-              <div class="table-fade-right"></div>
-            </div>
-
-            <!-- Mobile scroll note -->
-            <p class="mobile-scroll-note">
-              Complete dosing information available by scrolling horizontally
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Heavy Smokers Section -->
-      <section id="heavy-smokers" class="section section--bg">
-        <div class="container">
-          <h2 class="section__title">Special Guidance for Heavy Smokers</h2>
-          <div class="heavy-smoker-intro">
-            <p>
-              Patients smoking 3+ packs per day (60+ cigarettes) require
-              specialized high-dose NRT protocols with enhanced monitoring.
-            </p>
-          </div>
-
-          <div class="heavy-smoker-table-container">
-            <!-- Mobile scroll instruction -->
-            <div class="mobile-scroll-instruction">
-              <p class="mobile-instruction-text">
-                📱 On mobile devices: Swipe table left/right to see all columns
-              </p>
-              <div class="scroll-hint-arrows">
-                <span class="scroll-arrow scroll-arrow--left">←</span>
-                <span class="scroll-text">Scroll horizontally</span>
-                <span class="scroll-arrow scroll-arrow--right">→</span>
-              </div>
-            </div>
-
-            <div class="table-wrapper">
-              <table class="heavy-smoker-table">
-                <thead>
-                  <tr>
-                    <th class="sticky-column">Smoking Level</th>
-                    <th>Nicotine Need (mg)</th>
-                    <th>Patch Protocol</th>
-                    <th>Total Patch Nicotine</th>
-                    <th>Short-Acting Support</th>
-                    <th>Medical Supervision</th>
-                  </tr>
-                </thead>
-                <tbody id="heavy-smoker-table-body">
-                  <!-- Table data will be populated by JavaScript -->
-                </tbody>
-              </table>
-              <div class="table-fade-right"></div>
-            </div>
-
-            <!-- Mobile scroll note -->
-            <p class="mobile-scroll-note">
-              Complete dosing information available by scrolling horizontally
-            </p>
-          </div>
-
-          <div class="heavy-smoker-considerations">
-            <h3>Important Considerations</h3>
-            <ul class="considerations-list">
-              <li>
-                Multiple patch application requires rotation of sites to prevent
-                skin irritation
-              </li>
-              <li>
-                Monitor for signs of nicotine excess: nausea, dizziness, rapid
-                heartbeat
-              </li>
-              <li>
-                Consider extended treatment duration (24+ weeks) for very heavy
-                smokers
-              </li>
-              <li>
-                Combination with behavioral counseling significantly improves
-                outcomes
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- Safety Section -->
-      <section id="safety" class="section">
-        <div class="container">
-          <h2 class="section__title">Safety & Monitoring</h2>
-          <div class="safety-grid">
-            <div class="safety-card">
-              <h3>Common Side Effects</h3>
-              <ul>
-                <li>Skin irritation (patches)</li>
-                <li>Jaw soreness (gum)</li>
-                <li>Throat irritation (lozenges)</li>
-                <li>Mild nausea</li>
-                <li>Sleep disturbances</li>
-              </ul>
-            </div>
-            <div class="safety-card">
-              <h3>Contraindications</h3>
-              <ul>
-                <li>Recent MI (within 2 weeks)</li>
-                <li>Severe arrhythmias</li>
-                <li>Unstable angina</li>
-                <li>Pregnancy (relative)</li>
-                <li>Severe skin conditions (patches)</li>
-              </ul>
-            </div>
-            <div class="safety-card">
-              <h3>Overdose Symptoms</h3>
-              <ul>
-                <li>Severe nausea/vomiting</li>
-                <li>Dizziness/confusion</li>
-                <li>Rapid/irregular heartbeat</li>
-                <li>Severe headache</li>
-                <li>Cold sweats</li>
-              </ul>
-            </div>
-            <div class="safety-card">
-              <h3>Duration & Tapering</h3>
-              <ul>
-                <li>Standard treatment: 8-12 weeks</li>
-                <li>Heavy smokers: Up to 24 weeks</li>
-                <li>Gradual dose reduction</li>
-                <li>Monitor for relapse signs</li>
-                <li>Extended use is safe when needed</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <p>
-          &copy; 2025 Clinical Guide to Nicotine Replacement Therapy. For
-          educational and clinical reference purposes.
-        </p>
-        <p>
-          <small
-            >Always consult with healthcare providers for individual patient
-            care. This guide is based on current evidence and clinical
-            guidelines.</small
-          >
-        </p>
-      </div>
+    <!-- Small, subtle version footer -->
+    <footer>
+        <div class="version-indicator">v0.0.1 &nbsp;|&nbsp; 2025.08.21</div>
     </footer>
-
-    <script src="app.js"></script>
-  </body>
+</body>
 </html>
