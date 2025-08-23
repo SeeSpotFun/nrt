@@ -162,7 +162,7 @@
     --color-bg-6: rgba(194, 65, 12, 0.15); /* Dark orange */
     --color-bg-7: rgba(190, 24, 93, 0.15); /* Dark pink */
     --color-bg-8: rgba(8, 145, 178, 0.15); /* Dark cyan */
-    
+
     /* Semantic Color Tokens (Dark Mode) */
     --color-background: var(--color-charcoal-700);
     --color-surface: var(--color-charcoal-800);
@@ -222,7 +222,7 @@
   --color-bg-6: rgba(194, 65, 12, 0.15); /* Dark orange */
   --color-bg-7: rgba(190, 24, 93, 0.15); /* Dark pink */
   --color-bg-8: rgba(8, 145, 178, 0.15); /* Dark cyan */
-  
+
   /* Semantic Color Tokens (Dark Mode) */
   --color-background: var(--color-charcoal-700);
   --color-surface: var(--color-charcoal-800);
@@ -268,7 +268,7 @@
   --color-brown-600-rgb: 94, 82, 64;
   --color-teal-500-rgb: 33, 128, 141;
   --color-slate-900-rgb: 19, 52, 59;
-  
+
   /* Semantic Color Tokens (Light Mode) */
   --color-background: var(--color-cream-50);
   --color-surface: var(--color-cream-100);
@@ -732,9 +732,9 @@ select.form-control {
 }
 
 @font-face {
-  font-family: 'FKGroteskNeue';
-  src: url('https://r2cdn.perplexity.ai/fonts/FKGroteskNeue.woff2')
-    format('woff2');
+  font-family: "FKGroteskNeue";
+  src: url("https://r2cdn.perplexity.ai/fonts/FKGroteskNeue.woff2")
+    format("woff2");
 }
 
 /* END PERPLEXITY DESIGN SYSTEM */
@@ -1020,8 +1020,13 @@ select.form-control {
 
 /* Pulse animation for scroll arrows */
 @keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
 }
 
 /* Table Wrapper with Fade Effect */
@@ -1294,45 +1299,39 @@ html {
   .header__title {
     font-size: var(--font-size-3xl);
   }
-  
   .header__subtitle {
     font-size: var(--font-size-lg);
   }
-  
   .nav {
     gap: var(--space-16);
   }
-  
   .nav__link {
     padding: var(--space-6) var(--space-12);
     font-size: var(--font-size-sm);
   }
-  
   .overview-grid {
     grid-template-columns: 1fr;
   }
-  
   .result-grid {
     grid-template-columns: 1fr;
   }
-  
   .safety-grid {
     grid-template-columns: 1fr;
   }
-  
+
   /* Mobile table improvements */
   .dosing-table-container,
   .heavy-smoker-table-container {
     font-size: var(--font-size-sm);
   }
-  
+
   .dosing-table th,
   .dosing-table td,
   .heavy-smoker-table th,
   .heavy-smoker-table td {
     padding: var(--space-8) var(--space-10);
   }
-  
+
   /* Reduce minimum width on mobile for better scrolling */
   .dosing-table,
   .heavy-smoker-table {
@@ -1343,7 +1342,6 @@ html {
   .mobile-scroll-instruction {
     display: block;
   }
-  
   .mobile-scroll-note {
     display: block;
   }
@@ -1352,19 +1350,15 @@ html {
   .research-subsection {
     padding: var(--space-16);
   }
-  
   .research-subheading {
     font-size: var(--font-size-xl);
   }
-  
   .research-summary {
     font-size: var(--font-size-base);
   }
-  
   .source-info {
     gap: var(--space-8);
   }
-  
   .source-item {
     padding: var(--space-10);
   }
@@ -1374,11 +1368,16 @@ html {
     border-radius: var(--radius-base);
     box-shadow: var(--shadow-md);
   }
-  
+
   /* More prominent fade on mobile */
   .table-fade-right {
     width: 40px;
-    background: linear-gradient(to right, transparent 0%, var(--color-surface) 60%, var(--color-surface) 100%);
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      var(--color-surface) 60%,
+      var(--color-surface) 100%
+    );
   }
 }
 
@@ -1387,7 +1386,6 @@ html {
   .mobile-scroll-instruction {
     display: none;
   }
-  
   .mobile-scroll-note {
     display: none;
   }
@@ -1398,11 +1396,9 @@ html {
   .mobile-scroll-instruction {
     display: block;
   }
-  
   .mobile-scroll-note {
     display: block;
   }
-  
   .table-wrapper {
     box-shadow: var(--shadow-lg);
   }
@@ -1432,31 +1428,111 @@ html {
   .table-fade-right {
     display: none;
   }
-  
+
   .section {
     page-break-inside: avoid;
     padding: var(--space-16) 0;
   }
-  
+
   .research-subsection,
   .safety-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .dosing-table,
   .heavy-smoker-table {
     min-width: auto;
     font-size: var(--font-size-xs);
   }
-  
+
   .research-subsection {
     break-inside: avoid;
     margin-bottom: var(--space-16);
   }
-  
+
   .sticky-column {
     position: static;
     box-shadow: none;
     border-right: 1px solid var(--color-border);
   }
+}
+
+/* 🔧 Custom Period Input Row Styles */
+.custom-period-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* centers it in calculator */
+  align-items: center;
+  gap: var(--space-16); /* equal spacing between fields */
+  margin-top: var(--space-16);
+}
+
+.custom-period-row .form-group {
+  flex: 1 1 150px;
+  max-width: 200px;
+  margin: 0; /* reset the bottom margin for tighter row */
+}
+
+/* On mobile: stack the inputs full width */
+@media (max-width: 768px) {
+  .custom-period-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .custom-period-row .form-group {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+/* Version stack: pinned to header’s top-left, equal spacing */
+.version-stack {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 1;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 6px 8px;
+  background: rgba(var(--color-slate-500-rgb, 98, 108, 113), 0.08);
+  border: 1px solid var(--color-border, rgba(94, 82, 64, 0.2));
+  border-radius: var(--radius-sm, 6px);
+  color: var(--color-text-secondary, #62706f);
+  font-size: var(--font-size-sm, 12px);
+  line-height: 1.3;
+  pointer-events: none;
+  backdrop-filter: saturate(120%) blur(2px);
+  box-shadow: var(--shadow-xs, 0 1px 2px rgba(0, 0, 0, 0.02));
+  opacity: 0.85;
+}
+
+.version-stack .version-line {
+  white-space: nowrap;
+}
+
+@media print {
+  .version-stack {
+    display: none;
+  }
+}
+
+/* Hide version stack on small screens; show on desktop */
+@media (max-width: 768px) {
+  .version-stack {
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .version-stack {
+    display: inline-flex;
+  }
+}
+
+.form-label span[title] {
+  cursor: help;
+  font-size: 0.9em;
+  color: var(--color-primary);
+  margin-left: 4px;
 }
