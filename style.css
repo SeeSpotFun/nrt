@@ -154,14 +154,14 @@
     --color-gray-200-rgb: 245, 245, 245;
 
     /* Background color tokens (Dark Mode) */
-    --color-bg-1: rgba(29, 78, 216, 0.15); /* Dark blue */
-    --color-bg-2: rgba(180, 83, 9, 0.15); /* Dark yellow */
-    --color-bg-3: rgba(21, 128, 61, 0.15); /* Dark green */
-    --color-bg-4: rgba(185, 28, 28, 0.15); /* Dark red */
-    --color-bg-5: rgba(107, 33, 168, 0.15); /* Dark purple */
-    --color-bg-6: rgba(194, 65, 12, 0.15); /* Dark orange */
-    --color-bg-7: rgba(190, 24, 93, 0.15); /* Dark pink */
-    --color-bg-8: rgba(8, 145, 178, 0.15); /* Dark cyan */
+    --color-bg-1: rgba(29, 78, 216, 0.15);
+    --color-bg-2: rgba(180, 83, 9, 0.15);
+    --color-bg-3: rgba(21, 128, 61, 0.15);
+    --color-bg-4: rgba(185, 28, 28, 0.15);
+    --color-bg-5: rgba(107, 33, 168, 0.15);
+    --color-bg-6: rgba(194, 65, 12, 0.15);
+    --color-bg-7: rgba(190, 24, 93, 0.15);
+    --color-bg-8: rgba(8, 145, 178, 0.15);
 
     /* Semantic Color Tokens (Dark Mode) */
     --color-background: var(--color-charcoal-700);
@@ -214,14 +214,14 @@
   --color-gray-200-rgb: 245, 245, 245;
 
   /* Colorful background palette - Dark Mode */
-  --color-bg-1: rgba(29, 78, 216, 0.15); /* Dark blue */
-  --color-bg-2: rgba(180, 83, 9, 0.15); /* Dark yellow */
-  --color-bg-3: rgba(21, 128, 61, 0.15); /* Dark green */
-  --color-bg-4: rgba(185, 28, 28, 0.15); /* Dark red */
-  --color-bg-5: rgba(107, 33, 168, 0.15); /* Dark purple */
-  --color-bg-6: rgba(194, 65, 12, 0.15); /* Dark orange */
-  --color-bg-7: rgba(190, 24, 93, 0.15); /* Dark pink */
-  --color-bg-8: rgba(8, 145, 178, 0.15); /* Dark cyan */
+  --color-bg-1: rgba(29, 78, 216, 0.15);
+  --color-bg-2: rgba(180, 83, 9, 0.15);
+  --color-bg-3: rgba(21, 128, 61, 0.15);
+  --color-bg-4: rgba(185, 28, 28, 0.15);
+  --color-bg-5: rgba(107, 33, 168, 0.15);
+  --color-bg-6: rgba(194, 65, 12, 0.15);
+  --color-bg-7: rgba(190, 24, 93, 0.15);
+  --color-bg-8: rgba(8, 145, 178, 0.15);
 
   /* Semantic Color Tokens (Dark Mode) */
   --color-background: var(--color-charcoal-700);
@@ -416,11 +416,9 @@ pre code {
   background: var(--color-primary);
   color: var(--color-btn-primary-text);
 }
-
 .btn--primary:hover {
   background: var(--color-primary-hover);
 }
-
 .btn--primary:active {
   background: var(--color-primary-active);
 }
@@ -429,11 +427,9 @@ pre code {
   background: var(--color-secondary);
   color: var(--color-text);
 }
-
 .btn--secondary:hover {
   background: var(--color-secondary-hover);
 }
-
 .btn--secondary:active {
   background: var(--color-secondary-active);
 }
@@ -443,7 +439,6 @@ pre code {
   border: 1px solid var(--color-border);
   color: var(--color-text);
 }
-
 .btn--outline:hover {
   background: var(--color-secondary);
 }
@@ -453,17 +448,14 @@ pre code {
   font-size: var(--font-size-sm);
   border-radius: var(--radius-sm);
 }
-
 .btn--lg {
   padding: var(--space-10) var(--space-20);
   font-size: var(--font-size-lg);
   border-radius: var(--radius-md);
 }
-
 .btn--full-width {
   width: 100%;
 }
-
 .btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
@@ -501,18 +493,15 @@ select.form-control {
   padding-right: var(--space-32);
 }
 
-/* Add a dark mode specific caret */
 @media (prefers-color-scheme: dark) {
   select.form-control {
     background-image: var(--select-caret-dark);
   }
 }
 
-/* Also handle data-color-scheme */
 [data-color-scheme="dark"] select.form-control {
   background-image: var(--select-caret-dark);
 }
-
 [data-color-scheme="light"] select.form-control {
   background-image: var(--select-caret-light);
 }
@@ -528,7 +517,6 @@ select.form-control {
   font-weight: var(--font-weight-medium);
   font-size: var(--font-size-sm);
 }
-
 .form-group {
   margin-bottom: var(--space-16);
 }
@@ -546,18 +534,16 @@ select.form-control {
 .card:hover {
   box-shadow: var(--shadow-md);
 }
-
 .card__body {
   padding: var(--space-16);
 }
-
 .card__header,
 .card__footer {
   padding: var(--space-16);
   border-bottom: 1px solid var(--color-card-border-inner);
 }
 
-/* Status indicators - simplified with CSS variables */
+/* Status indicators */
 .status {
   display: inline-flex;
   align-items: center;
@@ -615,7 +601,6 @@ select.form-control {
   padding-right: var(--space-16);
   padding-left: var(--space-16);
 }
-
 @media (min-width: 640px) {
   .container {
     max-width: var(--container-sm);
@@ -637,7 +622,7 @@ select.form-control {
   }
 }
 
-/* Utility classes */
+/* Utilities */
 .flex {
   display: flex;
 }
@@ -720,7 +705,6 @@ select.form-control {
   white-space: nowrap;
   border-width: 0;
 }
-
 :focus-visible {
   outline: var(--focus-outline);
   outline-offset: 2px;
@@ -740,24 +724,21 @@ select.form-control {
 /* END PERPLEXITY DESIGN SYSTEM */
 /* Medical Website Specific Styles */
 
-/* Header Styles */
+/* Header */
 .header {
   background: var(--color-bg-1);
   padding: var(--space-24) 0;
   border-bottom: 1px solid var(--color-border);
 }
-
 .header__content {
   text-align: center;
 }
-
 .header__title {
   font-size: var(--font-size-4xl);
   color: var(--color-text);
   margin-bottom: var(--space-8);
   font-weight: var(--font-weight-bold);
 }
-
 .header__subtitle {
   font-size: var(--font-size-xl);
   color: var(--color-text-secondary);
@@ -772,7 +753,6 @@ select.form-control {
   gap: var(--space-32);
   flex-wrap: wrap;
 }
-
 .nav__link {
   color: var(--color-text);
   font-weight: var(--font-weight-medium);
@@ -782,30 +762,25 @@ select.form-control {
   text-decoration: none;
   cursor: pointer;
 }
-
 .nav__link:hover {
   background: var(--color-secondary);
   color: var(--color-primary);
 }
-
 .nav__link--active {
   background: var(--color-primary);
   color: var(--color-btn-primary-text);
 }
 
-/* Main Layout */
+/* Main */
 .main {
   min-height: 100vh;
 }
-
 .section {
   padding: var(--space-32) 0;
 }
-
 .section--bg {
   background: var(--color-bg-2);
 }
-
 .section__title {
   font-size: var(--font-size-3xl);
   text-align: center;
@@ -814,14 +789,13 @@ select.form-control {
   font-weight: var(--font-weight-semibold);
 }
 
-/* Overview Section */
+/* Overview */
 .overview-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: var(--space-24);
   margin-bottom: var(--space-32);
 }
-
 .overview-content {
   max-width: 800px;
   margin: 0 auto;
@@ -830,7 +804,6 @@ select.form-control {
   line-height: var(--line-height-normal);
   color: var(--color-text-secondary);
 }
-
 .stat {
   font-size: var(--font-size-4xl);
   font-weight: var(--font-weight-bold);
@@ -838,7 +811,7 @@ select.form-control {
   margin: var(--space-8) 0;
 }
 
-/* NEW Research Section Styles */
+/* Research Section */
 .research-subsection {
   background: var(--color-surface);
   border: 1px solid var(--color-card-border);
@@ -847,12 +820,10 @@ select.form-control {
   margin-bottom: var(--space-24);
   transition: transform var(--duration-normal) var(--ease-standard);
 }
-
 .research-subsection:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
 }
-
 .research-subheading {
   font-size: var(--font-size-2xl);
   color: var(--color-text);
@@ -861,20 +832,17 @@ select.form-control {
   padding-bottom: var(--space-8);
   border-bottom: 2px solid var(--color-primary);
 }
-
 .research-content {
   display: flex;
   flex-direction: column;
   gap: var(--space-16);
 }
-
 .research-summary {
   font-size: var(--font-size-lg);
   color: var(--color-text-secondary);
   font-style: italic;
   line-height: var(--line-height-normal);
 }
-
 .research-finding {
   background: var(--color-bg-3);
   padding: var(--space-16);
@@ -883,13 +851,11 @@ select.form-control {
   font-size: var(--font-size-base);
   line-height: var(--line-height-normal);
 }
-
 .source-info {
   display: flex;
   flex-direction: column;
   gap: var(--space-12);
 }
-
 .source-item {
   background: var(--color-bg-1);
   padding: var(--space-12);
@@ -897,22 +863,19 @@ select.form-control {
   font-size: var(--font-size-sm);
   line-height: var(--line-height-normal);
 }
-
 .source-item strong {
   color: var(--color-text);
   font-weight: var(--font-weight-semibold);
 }
-
 .source-item a {
   color: var(--color-primary);
   text-decoration: underline;
 }
-
 .source-item a:hover {
   color: var(--color-primary-hover);
 }
 
-/* Calculator Section */
+/* Calculator */
 .calculator-container {
   max-width: 600px;
   margin: 0 auto var(--space-32);
@@ -921,12 +884,10 @@ select.form-control {
   border-radius: var(--radius-lg);
   padding: var(--space-24);
 }
-
 .calculator-input {
   text-align: center;
   margin-bottom: var(--space-24);
 }
-
 .calculator-input .form-control {
   max-width: 200px;
   margin: var(--space-16) auto;
@@ -938,28 +899,24 @@ select.form-control {
   border-top: 1px solid var(--color-border);
   padding-top: var(--space-24);
 }
-
 .result-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: var(--space-16);
   margin-bottom: var(--space-16);
 }
-
 .result-item {
   text-align: center;
   padding: var(--space-16);
   background: var(--color-bg-3);
   border-radius: var(--radius-base);
 }
-
 .result-item h4 {
   color: var(--color-text-secondary);
   font-size: var(--font-size-sm);
   margin-bottom: var(--space-8);
   font-weight: var(--font-weight-medium);
 }
-
 .result-value {
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-semibold);
@@ -967,7 +924,6 @@ select.form-control {
   word-wrap: break-word;
   hyphens: auto;
 }
-
 .medical-supervision {
   text-align: center;
   margin-top: var(--space-16);
@@ -982,14 +938,12 @@ select.form-control {
   border-radius: var(--radius-base);
   border: 1px solid var(--color-warning);
 }
-
 .mobile-instruction-text {
   margin: 0 0 var(--space-8) 0;
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-medium);
   color: var(--color-text);
 }
-
 .scroll-hint-arrows {
   display: flex;
   align-items: center;
@@ -998,18 +952,15 @@ select.form-control {
   font-size: var(--font-size-sm);
   color: var(--color-text-secondary);
 }
-
 .scroll-arrow {
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-bold);
   color: var(--color-primary);
   animation: pulse 2s infinite;
 }
-
 .scroll-text {
   font-style: italic;
 }
-
 .mobile-scroll-note {
   text-align: center;
   margin-top: var(--space-12);
@@ -1018,7 +969,6 @@ select.form-control {
   font-style: italic;
 }
 
-/* Pulse animation for scroll arrows */
 @keyframes pulse {
   0%,
   100% {
@@ -1033,11 +983,13 @@ select.form-control {
 .table-wrapper {
   position: relative;
   overflow-x: auto;
-  -webkit-overflow-scrolling: touch; /* iOS momentum scrolling */
-  scroll-behavior: smooth;
+  overflow-y: hidden; /* prevent vertical trap */
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: auto; /* don't fight finger momentum */
   border-radius: var(--radius-lg);
   background: var(--color-surface);
   box-shadow: var(--shadow-sm);
+  touch-action: pan-x pan-y; /* allow both directions */
 }
 
 .table-fade-right {
@@ -1057,12 +1009,11 @@ select.form-control {
   opacity: 1;
 }
 
-/* Tables - Improved with sticky columns and better mobile support */
+/* Tables */
 .dosing-table-container,
 .heavy-smoker-table-container {
   margin-top: var(--space-32);
 }
-
 .dosing-table-container h3 {
   text-align: center;
   margin-bottom: var(--space-24);
@@ -1072,11 +1023,10 @@ select.form-control {
 .dosing-table,
 .heavy-smoker-table {
   width: 100%;
-  min-width: 800px; /* Ensure minimum width to prevent cramping */
+  min-width: 800px; /* allow horizontal scroll */
   border-collapse: collapse;
   background: var(--color-surface);
   border-radius: var(--radius-lg);
-  overflow: hidden;
 }
 
 /* Sticky first column */
@@ -1098,30 +1048,27 @@ select.form-control {
   border-bottom: 1px solid var(--color-border);
   vertical-align: top;
   word-wrap: break-word;
-  max-width: 200px; /* Prevent columns from getting too wide */
+  max-width: 200px;
 }
 
-/* Specific column widths to prevent text cutoff */
+/* Specific column widths */
 .dosing-table th:nth-child(1),
 .dosing-table td:nth-child(1) {
   width: 15%;
   white-space: nowrap;
   min-width: 120px;
 }
-
 .dosing-table th:nth-child(2),
 .dosing-table td:nth-child(2) {
   width: 15%;
   white-space: nowrap;
   min-width: 140px;
 }
-
 .dosing-table th:nth-child(3),
 .dosing-table td:nth-child(3) {
   width: 25%;
   min-width: 180px;
 }
-
 .dosing-table th:nth-child(4),
 .dosing-table td:nth-child(4) {
   width: 45%;
@@ -1135,27 +1082,23 @@ select.form-control {
   width: 20%;
   min-width: 160px;
 }
-
 .heavy-smoker-table th:nth-child(2),
 .heavy-smoker-table td:nth-child(2) {
   width: 12%;
   white-space: nowrap;
   min-width: 120px;
 }
-
 .heavy-smoker-table th:nth-child(3),
 .heavy-smoker-table td:nth-child(3) {
   width: 18%;
   min-width: 150px;
 }
-
 .heavy-smoker-table th:nth-child(4),
 .heavy-smoker-table td:nth-child(4) {
   width: 12%;
   white-space: nowrap;
   min-width: 120px;
 }
-
 .heavy-smoker-table th:nth-child(5),
 .heavy-smoker-table td:nth-child(5) {
   width: 25%;
@@ -1163,7 +1106,6 @@ select.form-control {
   hyphens: auto;
   min-width: 200px;
 }
-
 .heavy-smoker-table th:nth-child(6),
 .heavy-smoker-table td:nth-child(6) {
   width: 13%;
@@ -1200,31 +1142,26 @@ select.form-control {
   font-size: var(--font-size-lg);
   color: var(--color-text-secondary);
 }
-
 .heavy-smoker-considerations {
   margin-top: var(--space-32);
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
 }
-
 .heavy-smoker-considerations h3 {
   color: var(--color-text);
   margin-bottom: var(--space-16);
 }
-
 .considerations-list {
   list-style: none;
   padding: 0;
 }
-
 .considerations-list li {
   padding: var(--space-12) 0;
   padding-left: var(--space-24);
   position: relative;
   line-height: var(--line-height-normal);
 }
-
 .considerations-list li:before {
   content: "•";
   color: var(--color-primary);
@@ -1239,33 +1176,28 @@ select.form-control {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: var(--space-24);
 }
-
 .safety-card {
   background: var(--color-surface);
   border: 1px solid var(--color-card-border);
   border-radius: var(--radius-lg);
   padding: var(--space-24);
 }
-
 .safety-card h3 {
   color: var(--color-text);
   margin-bottom: var(--space-16);
   font-size: var(--font-size-xl);
 }
-
 .safety-card ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-
 .safety-card li {
   padding: var(--space-8) 0;
   padding-left: var(--space-20);
   position: relative;
   line-height: var(--line-height-normal);
 }
-
 .safety-card li:before {
   content: "✓";
   color: var(--color-primary);
@@ -1284,7 +1216,6 @@ select.form-control {
   font-size: var(--font-size-sm);
   margin-top: var(--space-32);
 }
-
 .footer p {
   margin-bottom: var(--space-8);
 }
@@ -1294,7 +1225,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 768px) {
   .header__title {
     font-size: var(--font-size-3xl);
@@ -1324,7 +1255,6 @@ html {
   .heavy-smoker-table-container {
     font-size: var(--font-size-sm);
   }
-
   .dosing-table th,
   .dosing-table td,
   .heavy-smoker-table th,
@@ -1369,6 +1299,13 @@ html {
     box-shadow: var(--shadow-md);
   }
 
+  /* Allow horizontal swipe without trapping vertical scroll */
+  .table-wrapper {
+    overscroll-behavior-x: contain; /* keep horizontal scroll inside wrapper */
+    overscroll-behavior-y: auto; /* allow page vertical scroll */
+    touch-action: pan-x pan-y; /* allow both directions */
+  }
+
   /* More prominent fade on mobile */
   .table-fade-right {
     width: 40px;
@@ -1404,20 +1341,19 @@ html {
   }
 }
 
-/* Focus states for accessibility */
+/* Focus states */
 .nav__link:focus-visible,
 .btn:focus-visible,
 .form-control:focus-visible {
   outline: var(--focus-outline);
   outline-offset: 2px;
 }
-
 .table-wrapper:focus-within {
   outline: var(--focus-outline);
   outline-offset: 2px;
 }
 
-/* Print styles */
+/* Print */
 @media print {
   .header,
   .nav,
@@ -1428,28 +1364,23 @@ html {
   .table-fade-right {
     display: none;
   }
-
   .section {
     page-break-inside: avoid;
     padding: var(--space-16) 0;
   }
-
   .research-subsection,
   .safety-grid {
     grid-template-columns: 1fr;
   }
-
   .dosing-table,
   .heavy-smoker-table {
     min-width: auto;
     font-size: var(--font-size-xs);
   }
-
   .research-subsection {
     break-inside: avoid;
     margin-bottom: var(--space-16);
   }
-
   .sticky-column {
     position: static;
     box-shadow: none;
@@ -1461,19 +1392,16 @@ html {
 .custom-period-row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* centers it in calculator */
+  justify-content: center;
   align-items: center;
-  gap: var(--space-16); /* equal spacing between fields */
+  gap: var(--space-16);
   margin-top: var(--space-16);
 }
-
 .custom-period-row .form-group {
   flex: 1 1 150px;
   max-width: 200px;
-  margin: 0; /* reset the bottom margin for tighter row */
+  margin: 0;
 }
-
-/* On mobile: stack the inputs full width */
 @media (max-width: 768px) {
   .custom-period-row {
     flex-direction: column;
@@ -1485,7 +1413,7 @@ html {
   }
 }
 
-/* Version stack: pinned to header’s top-left, equal spacing */
+/* Version stack */
 .version-stack {
   position: absolute;
   top: 8px;
@@ -1506,24 +1434,19 @@ html {
   box-shadow: var(--shadow-xs, 0 1px 2px rgba(0, 0, 0, 0.02));
   opacity: 0.85;
 }
-
 .version-stack .version-line {
   white-space: nowrap;
 }
-
 @media print {
   .version-stack {
     display: none;
   }
 }
-
-/* Hide version stack on small screens; show on desktop */
 @media (max-width: 768px) {
   .version-stack {
     display: none !important;
   }
 }
-
 @media (min-width: 769px) {
   .version-stack {
     display: inline-flex;
