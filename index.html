@@ -622,6 +622,7 @@
 
     <!-- Scripts -->
     <script src="app.js"></script>
+
     <script>
       // simple footer year
       document.addEventListener("DOMContentLoaded", function () {
@@ -629,6 +630,7 @@
         if (y) y.textContent = new Date().getFullYear();
       });
     </script>
+
     <script>
       // Smooth scroll without changing hash (prevents snap-back)
       document.addEventListener("DOMContentLoaded", () => {
@@ -641,6 +643,53 @@
             target.scrollIntoView({ behavior: "smooth", block: "start" });
             history.replaceState(null, "", " "); // clear hash to avoid re-jumps
           });
+        });
+      });
+    </script>
+
+    <script>
+      // Touch fallback for horizontally scrollable tables
+      document.addEventListener("DOMContentLoaded", () => {
+        const wrappers = document.querySelectorAll(".table-wrapper");
+        wrappers.forEach((w) => {
+          let isDown = false,
+            startX = 0,
+            scrollLeft = 0;
+
+          w.addEventListener(
+            "touchstart",
+            (e) => {
+              if (!e.touches || e.touches.length !== 1) return;
+              isDown = true;
+              startX = e.touches[0].pageX - w.offsetLeft;
+              scrollLeft = w.scrollLeft;
+            },
+            { passive: true }
+          );
+
+          w.addEventListener(
+            "touchmove",
+            (e) => {
+              if (!isDown || !e.touches || e.touches.length !== 1) return;
+              const x = e.touches[0].pageX - w.offsetLeft;
+              const walk = (x - startX) * -1;
+              if (Math.abs(walk) > 5) {
+                e.preventDefault(); // keep horizontal scroll under finger
+                w.scrollLeft = scrollLeft + walk;
+              }
+            },
+            { passive: false }
+          );
+
+          ["touchend", "touchcancel"].forEach((evt) =>
+            w.addEventListener(
+              evt,
+              () => {
+                isDown = false;
+              },
+              { passive: true }
+            )
+          );
         });
       });
     </script>
